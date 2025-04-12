@@ -1,0 +1,156 @@
+\documentclass{article} 
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{enumitem}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% Formatting of hyperlinks
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=blue,
+	pdfpagemode=FullScreen,
+}
+
+% Definition of the page layout
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=1in,
+	right=1in,
+	top=1in,
+	bottom=1in,
+}
+
+% Change the font
+\renewcommand{\familydefault}{\sfdefault}
+% Turn off page numbers
+\pagenumbering{gobble}
+
+% Formatting of section titles
+\titleformat{\section}{\huge\bfseries}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\bfseries\Large}{}{0em}{}
+\titleformat{\subsubsection}[runin]{\bfseries}{}{0em}{}
+
+% Configuration of the main header (name and contact info)
+\renewcommand{\maketitle} {
+	\begin{center}
+		{\huge\bfseries\theauthor} \\
+		\href{mailto:mail@example.com}{mail@example.com} | 
+		\href{https://github.com/example}{GitHub}
+		\vspace{.25em}
+	\end{center}
+
+}
+
+\newcommand{\tinybullet}{\raisebox{0.25ex}{\tiny$\bullet$}}
+
+
+% Layout of a subsection
+\newenvironment{hsSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
+	{\bf #1} {\em (#3)} \hfill {#2} % Bold company name and date on the right
+	\begin{list}{\tinybullet}{\leftmargin=1.5em\rightmargin=11em} % \cdot used for bullets, no indentation
+		\itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
+	}{
+	\end{list}
+	\vspace{0.5em} % Some space after the list of bullet points
+}
+
+\newenvironment{workSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
+{\bf #1} \hfill {#2} % Bold company name and date on the right
+
+\ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
+	\noindent{\em #3} \hfill {\em #4} % Italic job title and location
+	}
+	\begin{list}{\tinybullet}{\leftmargin=1.5em\rightmargin=11em} % \cdot used for bullets, no indentation
+		\itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
+	}{
+	\end{list}
+	\vspace{0.5em} % Some space after the list of bullet points
+}
+
+
+% #1: Location
+% #2: Date (default: today)
+% #3: Move the signature upwards
+% #4: Move the signature to the right
+\newcommand\resumesignature[4]{
+	\noindent
+		\begin{minipage}{6cm}
+			\ifthenelse{\equal{#4}{}}{}{\hspace*{#4}}
+			\includegraphics[width=4cm]{fig/signature.pdf}	
+			\noindent\vspace{-1cm}\par
+			\ifthenelse{\equal{#3}{}}{}{\noindent\vspace{#3}\par}
+			\noindent\rule{6cm}{0.5pt}\par
+			\noindent\vspace{-1em}\par
+			\noindent \: #1 \ifthenelse{\equal{#2}{}}{\today}{#2}
+		\end{minipage}
+}
+
+
+\author{John Doe}
+
+
+\begin{document}
+
+\begin{minipage}{.73\textwidth}
+	\maketitle
+\end{minipage}
+\begin{minipage}{35mm}
+	{
+		\setlength{\fboxsep}{0pt}
+		\setlength{\fboxrule}{0.5pt}
+		\fbox{\includegraphics[width=\textwidth]{fig/photo.png}}
+	}
+\end{minipage}
+
+\section{Education}
+
+\begin{hsSubsection}{M.Sc. Experimental Online Shopping}{06/2021 to 06/2023}{Eastern Bay University}{}
+	\item Bought a drawer full of electronics parts I will never use
+	\item Master thesis: Exploring Unfinished DIY Projects in the Age of E-Commerce
+\end{hsSubsection}
+\begin{hsSubsection}{B.Eng. Brewology}{06/2017 to 06/2021}{Coffee College}{}
+	\item Set a personal record for cups of coffee consumed in a single day
+	\item Bachelor thesis: Evaluating Layered Coffee and Mascarpone Desserts
+\end{hsSubsection}
+
+
+\section{Work Experience}
+\begin{workSubsection}{Jammed Paper Inc.}{06/2021 to 06/2022}{Internship, RD/HCF}{New Dork City}
+	\item Supported the setup and maintenance of office printers
+	\item Gained a basic knowledge of hieroglyphs while decoding printer errors
+	\item Evaluated measures to stop lp0 from catching fire
+\end{workSubsection}
+\begin{workSubsection}{Java Janitors (Coffee College)}{03/2020 to 09/2020}{Student associate}{Espresso Heights}
+\item Responsible for the cleaning, descaling, and maintenance of coffee brewing equipment to ensure optimal performance
+\end{workSubsection}
+
+
+\section{Skills}
+\subsubsection
+{Technical}
+\begin{list}{\tinybullet}{\leftmargin=1.5em}
+	\itemsep -0.5em \vspace{-0.5em}
+	\item Python, C, C\#
+	\item Summoning ancient demons using regular expressions
+	\item Installing Nvidia drivers on Linux (48\% success rate)
+\end{list}
+
+\vspace{-1.5em}
+
+\subsubsection
+{Languages}
+\begin{list}{\tinybullet}{\leftmargin=1.5em}
+	\itemsep -0.5em \vspace{-0.5em}
+	\item English (native)
+	\item Cat (meow)
+\end{list}
+
+\hfill\resumesignature{Electri City,}{}{-0.3cm}{0.3cm}
+
+\end{document}

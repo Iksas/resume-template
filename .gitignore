@@ -1,3 +1,6 @@
+## Exclude the compiled PDF
+resume.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
