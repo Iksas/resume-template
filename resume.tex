@@ -48,26 +48,24 @@
 
 }
 
-\newcommand{\tinybullet}{\raisebox{0.25ex}{\tiny$\bullet$}}
-
-
-% Layout of a subsection
-\newenvironment{eduList}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
-	{\bf #1} {\em (#3)} \hfill {#2} % Bold company name and date on the right
-	\begin{list}{\tinybullet}{\leftmargin=1.5em\rightmargin=11em} % \cdot used for bullets, no indentation
-		\itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
+% Layout for the subsection lists
+\newenvironment{resumeList}[5]{
+	% Define text variables
+	\ifthenelse{\equal{#2}{}}{
+		\newcommand{\braceText}{}
 	}{
-	\end{list}
-	\vspace{0.5em} % Some space after the list of bullet points
-}
-
-\newenvironment{workList}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
-{\bf #1} \hfill {#2} % Bold company name and date on the right
-
-\ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
-	\noindent{\em #3} \hfill {\em #4} % Italic job title and location
+		\newcommand{\braceText}{(#2)}
 	}
-	\begin{list}{\tinybullet}{\leftmargin=1.5em\rightmargin=11em} % \cdot used for bullets, no indentation
+	% The first title line
+	\noindent\textbf{#1} \textit{\braceText} \hfill {#3}
+	
+	% The second title line
+	% (Only printed if argument 4 and/or 5 are non-empty)
+	\ifthenelse{\equal{#4}{} \and \equal{#5}{}}{}{
+		\noindent\textit{#4} \hfill \textit{#5} % Italic job title and location
+	}
+	% The list itself
+	\begin{list}{\raisebox{0.25ex}{\tiny$\bullet$}}{\leftmargin=1.5em\rightmargin=11em} % \cdot used for bullets, no indentation
 		\itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
 	}{
 	\end{list}
@@ -120,44 +118,41 @@
 }
 
 \section{Education}
-\begin{eduList}{M.Sc. Experimental Online Shopping}{06/2021 to 06/2023}{Eastern Bay University}{}
+\begin{resumeList}{M.Sc. Experimental Online Shopping}{Eastern Bay University}{06/2021 to 06/2023}{}{}
 	\item Bought a drawer full of electronics parts I will never use
 	\item Master thesis: Exploring Unfinished DIY Projects in the Age of E-Commerce
-\end{eduList}
-\begin{eduList}{B.Eng. Brewology}{06/2017 to 06/2021}{Coffee College}{}
+\end{resumeList}
+\begin{resumeList}{B.Eng. Brewology}{Coffee College}{06/2017 to 06/2021}{}{}
 	\item Set a personal record for cups of coffee consumed in a single day
 	\item Bachelor thesis: Evaluating Layered Coffee and Mascarpone Desserts
-\end{eduList}
+\end{resumeList}
 
 
 \section{Work Experience}
-\begin{workList}{Jammed Paper Inc.}{06/2021 to 06/2022}{Internship, RD/HCF}{New Dork City}
+\begin{resumeList}{Jammed Paper Inc.}{}{06/2021 to 06/2022}
+	{Internship, RD/HCF}{New Dork City}
 	\item Supported the setup and maintenance of office printers
 	\item Gained a basic knowledge of hieroglyphs while decoding printer errors
 	\item Evaluated measures to stop lp0 from catching fire
-\end{workList}
-\begin{workList}{Java Janitors (Coffee College)}{03/2020 to 09/2020}{Student associate}{Espresso Heights}
+\end{resumeList}
+\begin{resumeList}{Java Janitors (Coffee College)}{}{03/2020 to 09/2020}
+	{Student associate}{Espresso Heights}
 \item Responsible for the cleaning, descaling, and maintenance of coffee brewing equipment to ensure optimal performance
-\end{workList}
+\end{resumeList}
 
 
 \section{Skills}
-\subsubsection{Technical}
-\begin{list}{\tinybullet}{\leftmargin=1.5em}
-	\itemsep -0.5em \vspace{-0.5em}
+
+\begin{resumeList}{Technical}{}{}{}{}
 	\item Python, C, C\#
 	\item Summoning ancient demons using regular expressions
 	\item Installing Nvidia drivers on Linux (48\% success rate)
-\end{list}
+\end{resumeList}
 
-\vspace{-1.5em}
-
-\subsubsection{Languages}
-\begin{list}{\tinybullet}{\leftmargin=1.5em}
-	\itemsep -0.5em \vspace{-0.5em}
+\begin{resumeList}{Languages}{}{}{}{}
 	\item English (native)
 	\item Cat (meow)
-\end{list}
+\end{resumeList}
 
 \ifdefined\includeSignature{
 	\hfill\resumesignature{\signatureCity,}{\signatureDate}{\signatureShiftUp}{\signatureShiftRight}
