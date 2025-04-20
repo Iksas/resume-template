@@ -35,7 +35,7 @@
 	a4paper,
 	left=1in,
 	right=1in,
-	top=1in,
+	top=0.9in,
 	bottom=1in,
 }
 
@@ -43,14 +43,14 @@
 \pagenumbering{gobble}
 
 % Formatting of section titles
-\titleformat{\section}{\huge\bfseries}{}{0em}{}[\titlerule]
+\titleformat{\section}{\LARGE\bfseries}{}{0em}{}[\titlerule]
 \titleformat{\subsection}{\bfseries\Large}{}{0em}{}
 \titleformat{\subsubsection}[runin]{\bfseries}{}{0em}{}
 
 % Configuration of the main header (name and contact info)
 \renewcommand{\maketitle} {
 	\begin{center}
-		{\huge\bfseries\theauthor} \\
+		{\Huge\bfseries\theauthor} \\
 		\href{mailto:\resumeEmail}{\resumeEmail}\ifthenelse{\equal{\resumeGithub}{}}{}{
 		 | \href{https://github.com/example}{GitHub}
 		\vspace{.25em}
