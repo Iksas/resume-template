@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{marvosym}
 
 %%% Font stuff %%%
 %% Name of the font
@@ -51,12 +52,13 @@
 \renewcommand{\maketitle} {
 	\begin{center}
 		{\Huge\bfseries\theauthor} \\
-		\href{mailto:\resumeEmail}{\resumeEmail}\ifthenelse{\equal{\resumeGithub}{}}{}{
-		 | \href{https://github.com/example}{GitHub}
-		\vspace{.25em}
-	}
+		\href{mailto:\resumeEmail}{\textcolor{black}{\Letter\ }\resumeEmail}\\
+		\href{tel:\resumePhone}{\textcolor{black}{\Telefon\ }\resumePhonePrint}\\
+		\ifthenelse{\equal{\resumeWebsite}{}}{}{
+			\href{\resumeWebsite}{\resumeWebsitePrint}
+			\vspace{.25em}
+		}
 	\end{center}
-
 }
 
 % Layout for the subsection lists
