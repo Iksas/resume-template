@@ -7,6 +7,19 @@
 \usepackage{ifthen}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{xcolor}
+
+%%% Font stuff %%%
+%% Name of the font
+\usepackage{charter}
+
+%% Uncomment to use the T1 encoding.
+%% This leads to a smaller PDF file size, but some special characters
+%% will have to be written differently (e.g. {\ss} for the German Eszett).
+\usepackage[T1]{fontenc}
+
+%% Uncomment the following line to use a sans-serif font
+%\renewcommand{\familydefault}{\sfdefault}
 
 % Formatting of hyperlinks
 \hypersetup{
@@ -26,8 +39,6 @@
 	bottom=1in,
 }
 
-% Change the font
-\renewcommand{\familydefault}{\sfdefault}
 % Turn off page numbers
 \pagenumbering{gobble}
 
@@ -57,12 +68,12 @@
 		\newcommand{\braceText}{(#2)}
 	}
 	% The first title line
-	\noindent\textbf{#1} \textit{\braceText} \hfill {#3}
+	\noindent\textbf{#1} \textcolor{darkgray}{\textit{\braceText}} \hfill {#3}
 	
 	% The second title line
 	% (Only printed if argument 4 and/or 5 are non-empty)
 	\ifthenelse{\equal{#4}{} \and \equal{#5}{}}{}{
-		\noindent\textit{#4} \hfill \textit{#5} % Italic job title and location
+		\noindent\textcolor{darkgray}{\textit{#4} \hfill \textit{#5}} % Italic job title and location
 	}
 	% The list itself
 	\begin{list}{\raisebox{0.25ex}{\tiny$\bullet$}}{\leftmargin=1.5em\rightmargin=11em} % \cdot used for bullets, no indentation
