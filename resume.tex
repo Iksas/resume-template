@@ -82,10 +82,10 @@
 	}
 	% The list itself
 	\begin{list}{\raisebox{0.25ex}{\tiny$\bullet$}}{\leftmargin=1.5em\rightmargin=11em} % \cdot used for bullets, no indentation
-		\itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
+		\itemsep -0.35em \vspace{-0.5em} % Compress items in list together for aesthetics
 	}{
 	\end{list}
-	\vspace{0.5em} % Some space after the list of bullet points
+	\vspace{0.2em} % Some space after the list of bullet points
 }
 
 
@@ -95,20 +95,20 @@
 % #4: Move the signature to the right
 \newcommand\resumesignature[4]{
 	\noindent
-		\begin{minipage}{6cm}
-			\ifthenelse{\equal{#4}{}}{}{\hspace*{#4}}
-			\ifthenelse{\equal{\signaturePicture}{}}
-			{
-				\vspace{\signatureHeight}
-			}{
-				\includegraphics[height=\signatureHeight]{\signaturePicture}
-			}
-			\noindent\vspace{-1cm}\par
-			\ifthenelse{\equal{#3}{}}{}{\noindent\vspace{#3}\par}
-			\noindent\rule{6cm}{0.5pt}\par
-			\noindent\vspace{-1em}\par
-			\noindent \: #1 \ifthenelse{\equal{#2}{}}{\today}{#2}
-		\end{minipage}
+	\begin{minipage}{6cm}
+		\ifthenelse{\equal{#4}{}}{}{\hspace*{#4}}
+		\ifthenelse{\equal{\signaturePicture}{}}
+		{
+			\vspace{\signatureHeight}
+		}{
+			\includegraphics[height=\signatureHeight]{\signaturePicture}
+		}
+		\noindent\vspace{-1cm}\par
+		\ifthenelse{\equal{#3}{}}{}{\noindent\vspace{#3}\par}
+		\noindent\rule{6cm}{0.5pt}\par
+		\noindent\vspace{-1em}\par
+		\noindent \: #1 \ifthenelse{\equal{#2}{}}{\today}{#2}
+	\end{minipage}
 }
 
 \include{data/settings}
@@ -117,27 +117,27 @@
 
 
 \begin{document}
-
-\ifthenelse{\equal{\mainPicture}{}}{
-	\maketitle
-}{
-\begin{minipage}{.73\textwidth}
-	\maketitle
-\end{minipage}
-\begin{minipage}{35mm}
-	{
-		\setlength{\fboxsep}{0pt}
-		\setlength{\fboxrule}{0.5pt}
-		\fbox{\includegraphics[width=\textwidth]{\mainPicture}}
+	
+	\ifthenelse{\equal{\mainPicture}{}}{
+		\maketitle
+	}{
+		\begin{minipage}{.73\textwidth}
+			\maketitle
+		\end{minipage}
+		\begin{minipage}{35mm}
+			{
+				\setlength{\fboxsep}{0pt}
+				\setlength{\fboxrule}{0.5pt}
+				\fbox{\includegraphics[width=\textwidth]{\mainPicture}}
+			}
+		\end{minipage}
 	}
-\end{minipage}
-}
-
-\input{data/sections}
-
-\ifdefined\includeSignature{
-	\hfill\resumesignature{\signatureCity,}{\signatureDate}{\signatureShiftUp}{\signatureShiftRight}
-}
-\else\fi
-
+	
+	\input{data/sections}
+	
+	\ifdefined\includeSignature{
+		\hfill\resumesignature{\signatureCity,}{\signatureDate}{\signatureShiftUp}{\signatureShiftRight}
+	}
+	\else\fi
+	
 \end{document}
