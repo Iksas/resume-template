@@ -1,6 +1,8 @@
+\include{data/settings}
+
 \documentclass{article} 
 \usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
+\usepackage[\resumeLanguage]{babel}
 \usepackage{titlesec}
 \usepackage{titling}
 \usepackage{enumitem}
@@ -110,8 +112,6 @@
 		\noindent \: #1 \ifthenelse{\equal{#2}{}}{\today}{#2}
 	\end{minipage}
 }
-
-\include{data/settings}
 
 \author{\resumeName}
 
