@@ -1,6 +1,8 @@
+\documentclass{article}
+\usepackage[dvipsnames]{xcolor}
+
 \include{data/settings}
 
-\documentclass{article} 
 \usepackage[utf8]{inputenc}
 \usepackage[\resumeLanguage]{babel}
 \usepackage{titlesec}
@@ -9,7 +11,6 @@
 \usepackage{ifthen}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage{xcolor}
 \usepackage{marvosym}
 
 %%% Font stuff %%%
@@ -27,8 +28,8 @@
 % Formatting of hyperlinks
 \hypersetup{
 	colorlinks=true,
-	linkcolor=blue,
-	urlcolor=blue,
+	linkcolor=\urlColor,
+	urlcolor=\urlColor,
 	pdfpagemode=FullScreen,
 }
 
@@ -46,21 +47,21 @@
 \pagenumbering{gobble}
 
 % Formatting of section titles
-\titleformat{\section}{\LARGE\bfseries}{}{0em}{}[\titlerule]
+\titleformat{\section}{\LARGE\bfseries\color{\bigTitleColor}}{}{0em}{}[\color{\titleLineColor}\titlerule]
 \titleformat{\subsection}{\bfseries\Large}{}{0em}{}
 \titleformat{\subsubsection}[runin]{\bfseries}{}{0em}{}
 
 % Configuration of the main header (name and contact info)
 \renewcommand{\maketitle} {
 	\begin{center}
-		{\Huge\bfseries\theauthor} \\
+		{\textcolor{\nameColor}{\Huge\bfseries\theauthor}} \\
 		\ifthenelse{\equal{\resumeAddress}{}}{}{
 			\resumeAddress\\
 		}
-		\href{mailto:\resumeEmail}{\textcolor{black}{\Letter\ }\resumeEmail}\\
-		\href{tel:\resumePhone}{\textcolor{black}{\Telefon\ }\resumePhonePrint}\\
+		\href{mailto:\resumeEmail}{\textcolor{\headerSymbolColor}{\Letter\ }\resumeEmail}\\
+		\href{tel:\resumePhone}{\textcolor{\headerSymbolColor}{\Telefon\ }\resumePhonePrint}\\
 		\ifthenelse{\equal{\resumeWebsite}{}}{}{
-			\href{\resumeWebsite}{\textcolor{black}{\Mundus\ }\resumeWebsitePrint}
+			\href{\resumeWebsite}{\textcolor{\headerSymbolColor}{\Mundus\ }\resumeWebsitePrint}
 			\vspace{.25em}
 		}
 	\end{center}
@@ -75,12 +76,12 @@
 		\newcommand{\braceText}{(#2)}
 	}
 	% The first title line
-	\noindent\textbf{#1} \textcolor{darkgray}{\textit{\braceText}} \hfill {#3}
+	\noindent\textcolor{\smallTitleColor}{\textbf{#1}} \textcolor{\topItalicsColor}{\textit{\braceText}} \hfill {#3}
 	
 	% The second title line
 	% (Only printed if argument 4 and/or 5 are non-empty)
 	\ifthenelse{\equal{#4}{} \and \equal{#5}{}}{}{
-		\noindent\textcolor{darkgray}{\textit{#4} \hfill \textit{#5}} % Italic job title and location
+		\noindent\textcolor{\bottomItalicsColor}{\textit{#4} \hfill \textit{#5}} % Italic job title and location
 	}
 	% The list itself
 	\begin{list}{\raisebox{0.25ex}{\tiny$\bullet$}}{\leftmargin=1.5em\rightmargin=11em} % \cdot used for bullets, no indentation
@@ -107,7 +108,7 @@
 		}
 		\noindent\vspace{-1cm}\par
 		\ifthenelse{\equal{#3}{}}{}{\noindent\vspace{#3}\par}
-		\noindent\rule{6cm}{0.5pt}\par
+		\noindent\textcolor{\signatureLineColor}{\rule{6cm}{0.5pt}}\par
 		\noindent\vspace{-1em}\par
 		\noindent \: #1 \ifthenelse{\equal{#2}{}}{\today}{#2}
 	\end{minipage}
@@ -115,7 +116,7 @@
 
 \author{\resumeName}
 
-
+\color{\defaultTextColor}
 \begin{document}
 	
 	\ifthenelse{\equal{\mainPicture}{}}{
@@ -126,9 +127,11 @@
 		\end{minipage}
 		\begin{minipage}{35mm}
 			{
+				\color{\photoBorderColor}
 				\setlength{\fboxsep}{0pt}
 				\setlength{\fboxrule}{0.5pt}
 				\fbox{\includegraphics[width=\textwidth]{\mainPicture}}
+				\color{\defaultTextColor}
 			}
 		\end{minipage}
 	}

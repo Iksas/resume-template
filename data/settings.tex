@@ -1,4 +1,12 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Language configuration %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\resumeLanguage}{english} % Language of the date below the signature
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Metadata configuration %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\resumeName}{John Doe} % Your name
 
@@ -9,9 +17,17 @@
 \newcommand{\resumeWebsite}{https://example.com/website} % Set to an empty string to remove
 \newcommand{\resumeWebsitePrint}{example.com/website} % The text that is displayed on the link
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Picture configuration %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % The main picture. Remove the file path to turn off the picture.
 \newcommand{\mainPicture}{fig/photo.png}
 \newcommand{\mainPictureWidth}{35mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Signature configuration %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Comment out the following line to remove the signature
 \newcommand{\includeSignature}{}
@@ -25,3 +41,54 @@
 \newcommand{\signatureShiftRight}{0.3cm}
 \newcommand{\signatureCity}{Electri City}
 \newcommand{\signatureDate}{} % The date of the signature. Leave empty to use the current date.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Color configuration %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Colors known to the xcolors package can be used:
+%%%%%
+%%%%%     \newcommand{\exampleSetting}{blue}
+%%%%%
+%%%%% This includes the dvips colors:
+%%%%%
+%%%%%     \newcommand{\exampleSetting}{Apricot}
+%%%%%
+%%%%% You can also define new color names in this file with \definecolor:
+%%%%%
+%%%%%     \definecolor{myOrange}{RGB}{255,127,0}
+%%%%%     \newcommand{\exampleSetting}{myOrange}
+%%%%%
+%%%%% For a list of available colors and more infos, see:
+%%%%% https://en.wikibooks.org/wiki/LaTeX/Colors#Predefined_colors
+%%%%%
+
+% Default color for text that doesn't have another color
+\newcommand{\defaultTextColor}{black}
+
+%%% Colors used in the header %%%
+% Name at the very top
+\newcommand{\nameColor}{\defaultTextColor}
+% Hyperlinks in the header
+\newcommand{\urlColor}{blue}
+% Symbols (envelope etc.) next to the hyperlinks
+\newcommand{\headerSymbolColor}{\defaultTextColor}
+
+%%% Main text colors %%%
+% Big titles
+\newcommand{\bigTitleColor}{\defaultTextColor}
+% Smaller titles
+\newcommand{\smallTitleColor}{\defaultTextColor}
+% Text in parantheses to the right of small titles
+\newcommand{\topItalicsColor}{darkgray}
+% Italic text directly below small titles
+\newcommand{\bottomItalicsColor}{darkgray}
+
+%%% Line colors %%%
+% Line around the header photo
+\newcommand{\photoBorderColor}{black}
+% Lines below the main titles
+\newcommand{\titleLineColor}{black}
+% Line below the signature
+\newcommand{\signatureLineColor}{black}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
