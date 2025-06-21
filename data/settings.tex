@@ -1,46 +1,108 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Language configuration %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% The language of the resume can be set below.
+%%%%% It is mostly used to set the date format below the signature.
+%%%%%
+%%%%% All languages supported by the "babel" package can be used.
+%%%%% Note that this document uses babel's "classical"
+%%%%% (also called "ldf") language names.
+%%%%%
+%%%%% A list of supported languages can be found in chapter 1.6 of
+%%%%% the following PDF:
+%%%%% https://ctan.net/macros/latex/required/babel/base/babel.pdf
+%%%%%
 
-\newcommand{\resumeLanguage}{english} % Language of the date below the signature
+% Language of the document
+\newcommand{\resumeLanguage}{english}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Metadata configuration %%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\resumeName}{John Doe} % Your name
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Contact information %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Define your contact information below.
+%%%%%
+%%%%% Note that some attributes are optional. They can be omitted
+%%%%% by setting them to an empty string, e.g.:
+%%%%%
+%%%%%     \newcommand{\unusedSetting}{}
+%%%%%
 
+% Your name
+\newcommand{\resumeName}{John Doe}
+
+% Your postal address
+% (Optional, set to an empty string to remove)
 \newcommand{\resumeAddress}{Deer Ave 12, Cappuccino Springs, XY 12345}
-\newcommand{\resumeEmail}{mail@example.com} % Your email
-\newcommand{\resumePhone}{+1234567890} % Your phone number
-\newcommand{\resumePhonePrint}{+1 234 567890} % Your phone number with spaces
-\newcommand{\resumeWebsite}{https://example.com/website} % Set to an empty string to remove
-\newcommand{\resumeWebsitePrint}{example.com/website} % The text that is displayed on the link
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Picture configuration %%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Your email address
+\newcommand{\resumeEmail}{mail@example.com}
+% Your phone number
+\newcommand{\resumePhone}{+1234567890}
+% Your phone number with spaces, to improve legibility
+\newcommand{\resumePhonePrint}{+1 234 567890}
 
-% The main picture. Remove the file path to turn off the picture.
+% Full link to your website
+% (Optional, set to an empty string to remove)
+\newcommand{\resumeWebsite}{https://example.com/website}
+% Short website link that will be visible in the PDF
+\newcommand{\resumeWebsitePrint}{example.com/website}
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%%% Picture %%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%% In the top right corner of the resume, a picture can be added.
+%%%%% All common image formats are supported.
+%%%%%
+%%%%% To turn off the picture, set \mainPicture to an empty string:
+%%%%%
+%%%%%     \newcommand{\mainPicture}{}
+%%%%%
+
+% File path of the main picture, relative to the main folder. 
+% (Optional, set to an empty string to turn off the picture.)
 \newcommand{\mainPicture}{fig/photo.png}
+% The picture will be scaled to the following width:
 \newcommand{\mainPictureWidth}{35mm}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Signature configuration %%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Comment out the following line to remove the signature
+%%%%%%%%%%%%%%%%%%%%%
+%%%%% Signature %%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%% A signature line can be added to the bottom right corner.
+%%%%% There are three options:
+%%%%%
+%%%%% - A signature line with a signature
+%%%%% - A signature line without signature (to sign by hand)
+%%%%% - Nothing
+%%%%%
+%%%%% When adding a printed signature, a file with a transparent
+%%%%% background must be used. PDF and PNG files have been 
+%%%%% tested successfully.
+%%%%%
+
+% Comment out the following line to completely remove the signature line
 \newcommand{\includeSignature}{}
-% The signature picture. Remove the file path to display an empty space (for hand signing).
+
+%%% Signature picture settings %%%
+% File path of the signature picture, relative to the main folder.
 % The signature can be a PNG or PDF file with a transparent background.
+% (Optional, set to an empty string to turn off the picture.)
 \newcommand{\signaturePicture}{fig/signature.pdf}
-% Adjust the size of the signature
+% Adjust the height of the printed signature
 \newcommand{\signatureHeight}{2cm}
-% Adjust the position of the signature
+% Move the printed signature to the desired position
 \newcommand{\signatureShiftUp}{-0.25cm}
 \newcommand{\signatureShiftRight}{0.3cm}
+
+%%% Signature line settings %%%
+% The location of the signature
 \newcommand{\signatureCity}{Electri City}
-\newcommand{\signatureDate}{} % The date of the signature. Leave empty to use the current date.
+% The date of the signature
+% (Leave empty to use the current date)
+\newcommand{\signatureDate}{}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Color configuration %%%%%
@@ -90,5 +152,3 @@
 \newcommand{\titleLineColor}{black}
 % Line below the signature
 \newcommand{\signatureLineColor}{black}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
