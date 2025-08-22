@@ -47,7 +47,7 @@
 \pagenumbering{gobble}
 
 % Formatting of section titles
-\titleformat{\section}{\LARGE\bfseries\color{\bigTitleColor}}{}{0em}{}[\color{\titleLineColor}\titlerule]
+\titleformat{\section}{\Large\bfseries\scshape\color{\bigTitleColor}}{}{0em}{}[\color{\titleLineColor}\titlerule]
 \titleformat{\subsection}{\bfseries\Large}{}{0em}{}
 \titleformat{\subsubsection}[runin]{\bfseries}{}{0em}{}
 
@@ -76,7 +76,7 @@
 		\newcommand{\braceText}{(#2)}
 	}
 	% The first title line
-	\noindent\textcolor{\smallTitleColor}{\textbf{#1}} \textcolor{\topItalicsColor}{\textit{\braceText}} \hfill {#3}
+	\noindent\textcolor{\smallTitleColor}{\large\textbf{#1}} \textcolor{\topItalicsColor}{\braceText} \hfill {#3}
 	
 	% The second title line
 	% (Only printed if argument 4 and/or 5 are non-empty)
@@ -125,7 +125,7 @@
 		\begin{minipage}{.73\textwidth}
 			\maketitle
 		\end{minipage}
-		\begin{minipage}{35mm}
+		\begin{minipage}{\mainPictureWidth}
 			{
 				\color{\photoBorderColor}
 				\setlength{\fboxsep}{0pt}
