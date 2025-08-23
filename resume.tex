@@ -92,55 +92,13 @@
 }
 
 
-% #1: Location
-% #2: Date (default: today)
-% #3: Move the signature upwards
-% #4: Move the signature to the right
-\newcommand\resumesignature[4]{
-	\noindent
-	\begin{minipage}{6cm}
-		\ifthenelse{\equal{#4}{}}{}{\hspace*{#4}}
-		\ifthenelse{\equal{\signaturePicture}{}}
-		{
-			\vspace{\signatureHeight}
-		}{
-			\includegraphics[height=\signatureHeight]{\signaturePicture}
-		}
-		\noindent\vspace{-1cm}\par
-		\ifthenelse{\equal{#3}{}}{}{\noindent\vspace{#3}\par}
-		\noindent\textcolor{\signatureLineColor}{\rule{6cm}{0.5pt}}\par
-		\noindent\vspace{-1em}\par
-		\noindent \: #1 \ifthenelse{\equal{#2}{}}{\today}{#2}
-	\end{minipage}
-}
-
 \author{\resumeName}
 
 \color{\defaultTextColor}
 \begin{document}
 	
-	\ifthenelse{\equal{\mainPicture}{}}{
-		\maketitle
-	}{
-		\begin{minipage}{.73\textwidth}
-			\maketitle
-		\end{minipage}
-		\begin{minipage}{\mainPictureWidth}
-			{
-				\color{\photoBorderColor}
-				\setlength{\fboxsep}{0pt}
-				\setlength{\fboxrule}{0.5pt}
-				\fbox{\includegraphics[width=\textwidth]{\mainPicture}}
-				\color{\defaultTextColor}
-			}
-		\end{minipage}
-	}
+	\maketitle
 	
 	\input{data/sections}
-	
-	\ifdefined\includeSignature{
-		\hfill\resumesignature{\signatureCity,}{\signatureDate}{\signatureShiftUp}{\signatureShiftRight}
-	}
-	\else\fi
 	
 \end{document}

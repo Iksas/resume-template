@@ -49,61 +49,6 @@
 \newcommand{\resumeWebsitePrint}{example.com/website}
 
 
-%%%%%%%%%%%%%%%%%%%
-%%%%% Picture %%%%%
-%%%%%%%%%%%%%%%%%%%
-%%%%% In the top right corner of the resume, a picture can be added.
-%%%%% All common image formats are supported.
-%%%%%
-%%%%% To turn off the picture, set \mainPicture to an empty string:
-%%%%%
-%%%%%     \newcommand{\mainPicture}{}
-%%%%%
-
-% File path of the main picture, relative to the main folder. 
-% (Optional, set to an empty string to turn off the picture.)
-\newcommand{\mainPicture}{fig/photo.png}
-% The picture will be scaled to the following width:
-\newcommand{\mainPictureWidth}{35mm}
-
-
-%%%%%%%%%%%%%%%%%%%%%
-%%%%% Signature %%%%%
-%%%%%%%%%%%%%%%%%%%%%
-%%%%% A signature line can be added to the bottom right corner.
-%%%%% There are three options:
-%%%%%
-%%%%% - A signature line with a signature
-%%%%% - A signature line without signature (to sign by hand)
-%%%%% - Nothing
-%%%%%
-%%%%% When adding a printed signature, a file with a transparent
-%%%%% background must be used. PDF and PNG files have been 
-%%%%% tested successfully.
-%%%%%
-
-% Comment out the following line to completely remove the signature line
-\newcommand{\includeSignature}{}
-
-%%% Signature picture settings %%%
-% File path of the signature picture, relative to the main folder.
-% The signature can be a PNG or PDF file with a transparent background.
-% (Optional, set to an empty string to turn off the picture.)
-\newcommand{\signaturePicture}{fig/signature.pdf}
-% Adjust the height of the printed signature
-\newcommand{\signatureHeight}{2cm}
-% Move the printed signature to the desired position
-\newcommand{\signatureShiftUp}{-0.25cm}
-\newcommand{\signatureShiftRight}{0.3cm}
-
-%%% Signature line settings %%%
-% The location of the signature
-\newcommand{\signatureCity}{Electri City}
-% The date of the signature
-% (Leave empty to use the current date)
-\newcommand{\signatureDate}{}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Color configuration %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -131,7 +76,8 @@
 % Name at the very top
 \newcommand{\nameColor}{\defaultTextColor}
 % Hyperlinks in the header
-\newcommand{\urlColor}{blue}
+\definecolor{DarkBlue}{RGB}{0,0,148}
+\newcommand{\urlColor}{DarkBlue}
 % Symbols (envelope etc.) next to the hyperlinks
 \newcommand{\headerSymbolColor}{\defaultTextColor}
 
@@ -146,9 +92,5 @@
 \newcommand{\bottomItalicsColor}{darkgray}
 
 %%% Line colors %%%
-% Line around the header photo
-\newcommand{\photoBorderColor}{black}
 % Lines below the main titles
 \newcommand{\titleLineColor}{black}
-% Line below the signature
-\newcommand{\signatureLineColor}{black}
