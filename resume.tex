@@ -28,9 +28,14 @@
 
 % Formatting of hyperlinks
 \hypersetup{
-	colorlinks=true,
+	% Set colorlinks=false to display colored boxes around links instead.
+	colorlinks=\useColoredLinks,
 	linkcolor=\urlColor,
+	linkbordercolor=\urlFrameColor,
 	urlcolor=\urlColor,
+	urlbordercolor=\urlFrameColor,
+	pdfborder={1 1 \urlFrameWidth},
+	pdflinkmargin=\urlFrameMargin,
 	pdfpagemode=FullScreen,
 }
 

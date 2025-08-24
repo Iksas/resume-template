@@ -75,9 +75,11 @@
 %%% Colors used in the header %%%
 % Name at the very top
 \newcommand{\nameColor}{\defaultTextColor}
-% Hyperlinks in the header
+% Hyperlinks in the header (only if \useColoredLinks is "true", see below)
 \definecolor{DarkBlue}{RGB}{0,0,148}
 \newcommand{\urlColor}{DarkBlue}
+% Frames displayed around hyperlinks (only if \useColoredLinks is "false", see below)
+\newcommand{\urlFrameColor}{cyan}
 % Symbols (envelope etc.) next to the hyperlinks
 \newcommand{\headerSymbolColor}{\defaultTextColor}
 
@@ -94,3 +96,30 @@
 %%% Line colors %%%
 % Lines below the main titles
 \newcommand{\titleLineColor}{black}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% URL configuration %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% URLs can be visually distinguished from normal text in one of two ways:
+%%%%%
+%%%%% - URLs use colored text. This ensures a consistent presentation when
+%%%%%   the file is digitally viewed, but can lead to reduced print quality if the
+%%%%%   file is printed with a black-and-white printer.
+%%%%% - URLs use black text, with a colored frame that is only visible when the
+%%%%%   file is viewed digitally. This ensures optimal print quality, while
+%%%%%   highlighting the URLs only when they can actually be clicked. However, the
+%%%%%   colored frames may look unappealing compared to colored text.
+%%%%%
+%%%%% For more information, see:
+%%%%% https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Customization
+%%%%%
+
+%% Style used to display hyperlinks
+% Set to "true" to make hyperlinks use colored text.
+% Set to "false" to display frames around hyperlinks instead.
+\newcommand{\useColoredLinks}{false}
+% Width of the frames around hyperlinks
+\newcommand{\urlFrameWidth}{0.1}
+% Margin of the frames around hyperlinks
+\newcommand{\urlFrameMargin}{0.1em}
