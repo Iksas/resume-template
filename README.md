@@ -1,6 +1,6 @@
 # resume-template
 
-This repo contains a LaTeX template that can be used to create a single-page resume with zero bloat.
+This repo contains a LaTeX template that can be used to create a single-page resume.
 
 To customize the template, only the files in the `data` folder need to be touched:
 
