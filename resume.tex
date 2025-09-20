@@ -45,7 +45,7 @@
 	a4paper,
 	left=1in,
 	right=1in,
-	top=0.9in,
+	top=0.7in,
 	bottom=1in,
 }
 
@@ -75,18 +75,12 @@
 
 % Layout for the subsection lists
 \newenvironment{resumeList}[5]{
-	% Define text variables
-	\ifthenelse{\equal{#2}{}}{
-		\newcommand{\braceText}{}
-	}{
-		\newcommand{\braceText}{(#2)}
-	}
 	% The first title line
 	\ifthenelse{\equal{#1}{}}
 	{
 		\vspace{0.5em}%
 	}{
-		\noindent\textcolor{\smallTitleColor}{\large\textbf{#1}} \textcolor{\topItalicsColor}{\braceText} \hfill {#3}%
+		\noindent\textcolor{\smallTitleColor}{\large\textbf{#1}} \textcolor{\topItalicsColor}{#2} \hfill {#3}%
 	}
 
 	% The second title line
