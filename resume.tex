@@ -127,9 +127,6 @@
 	\ifthenelse{\equal{\mainPicture}{}}{
 		\maketitle
 	}{
-		\begin{minipage}{.73\textwidth}
-			\maketitle
-		\end{minipage}
 		\begin{minipage}{\mainPictureWidth}
 			{
 				\color{\photoBorderColor}
@@ -138,6 +135,9 @@
 				\fbox{\includegraphics[width=\textwidth]{\mainPicture}}
 				\color{\defaultTextColor}
 			}
+		\end{minipage}
+		\begin{minipage}{.73\textwidth}
+			\maketitle
 		\end{minipage}
 	}
 	
